@@ -2,20 +2,31 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Toram Style MMORPG - Camera Controls</title>
+    <title>Toram Style MMORPG - Battle System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- UIレイヤー -->
     <div id="ui-container">
-        <!-- UI部分はそのまま -->
+        <div class="hp-bar-wrapper">
+            <span>Player HP</span>
+            <div id="hp-bar"><div id="hp-fill"></div></div>
+            <!-- ターゲット情報表示エリア（追加） -->
+            <div id="target-info" style="margin-top: 10px; color: #ffcc00; font-size: 14px; font-weight: bold;">
+                Target: None
+            </div>
+        </div>
+        <div id="skill-tray">
+            <button id="skill-btn-1" class="skill-icon">1: 攻撃 (Skill)</button>
+        </div>
     </div>
+
+    <!-- 3D描画キャンバス -->
     <canvas id="gameCanvas"></canvas>
 
-    <!-- Three.js本体 -->
+    <!-- ライブラリ読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- GLTFLoader -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <!-- OrbitControls -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="main.js"></script>
 </body>
